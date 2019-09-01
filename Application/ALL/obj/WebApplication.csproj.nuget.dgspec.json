@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Metrocamp\\ALL\\ALL\\WebApplication.csproj": {}
+    "D:\\Metrocamp\\web-lanchonete_app\\Application\\ALL\\WebApplication.csproj": {}
   },
   "projects": {
-    "D:\\Metrocamp\\ALL\\ALL\\WebApplication.csproj": {
+    "D:\\Metrocamp\\web-lanchonete_app\\Application\\ALL\\WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Metrocamp\\ALL\\ALL\\WebApplication.csproj",
+        "projectUniqueName": "D:\\Metrocamp\\web-lanchonete_app\\Application\\ALL\\WebApplication.csproj",
         "projectName": "WebApplication",
-        "projectPath": "D:\\Metrocamp\\ALL\\ALL\\WebApplication.csproj",
+        "projectPath": "D:\\Metrocamp\\web-lanchonete_app\\Application\\ALL\\WebApplication.csproj",
         "packagesPath": "C:\\Users\\leticiaps\\.nuget\\packages\\",
-        "outputPath": "D:\\Metrocamp\\ALL\\ALL\\obj\\",
+        "outputPath": "D:\\Metrocamp\\web-lanchonete_app\\Application\\ALL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.9, )"
             }
           },
           "imports": [
