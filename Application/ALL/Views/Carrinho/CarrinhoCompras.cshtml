@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "CarrinhoCompras";
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/js/popper.min.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/js/jquery.waypoints.min.js")"></script>
+    <script src="@Url.Content("~/js/aos.js")"></script>
+    <script src="@Url.Content("~/js/jquery.magnific-popup.min.js")"></script>
+    <script src="@Url.Content("~/js/magnific-popup-options.js")"></script>
+    <script src="@Url.Content("~/js/main.js")"></script>
+}
+
+@model List<WebApplication.Models.In.ItemCompraIn>
+
+@foreach (var element in Model)
+{
+    <p>@Html.DisplayFor(m => element)</p>
+}

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ALL.Models;
+using Microsoft.AspNetCore.Http;
+using WebApplication.Constants;
 
 namespace ALL.Controllers
 {
@@ -12,6 +10,7 @@ namespace ALL.Controllers
     {
         public IActionResult Index()
         {
+            ViewBag.Usuario = HttpContext.Session.GetString(Sessions.SessionUser);
             return View();
         }
 

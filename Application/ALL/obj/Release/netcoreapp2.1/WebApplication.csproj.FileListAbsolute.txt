@@ -5,7 +5,6 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\bin\Release\netcoreapp2.1\WebApp
 D:\Metrocamp\web-lanchonete_app\Application\ALL\bin\Release\netcoreapp2.1\WebApplication.pdb
 D:\Metrocamp\web-lanchonete_app\Application\ALL\bin\Release\netcoreapp2.1\WebApplication.Views.dll
 D:\Metrocamp\web-lanchonete_app\Application\ALL\bin\Release\netcoreapp2.1\WebApplication.Views.pdb
-D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.csprojAssemblyReference.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.csproj.CoreCompileInputs.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.RazorAssemblyInfo.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.RazorAssemblyInfo.cs
@@ -15,6 +14,7 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApp
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.TagHelpers.output.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.RazorCoreGenerate.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Login\Login.g.cshtml.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -27,4 +27,3 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApp
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.dll
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.pdb
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\WebApplication.csproj.CopyComplete
-D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Release\netcoreapp2.1\Razor\Views\Login\Login.g.cshtml.cs
