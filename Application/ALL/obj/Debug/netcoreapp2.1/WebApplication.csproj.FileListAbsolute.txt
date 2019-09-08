@@ -30,3 +30,4 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebAppli
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.csprojAssemblyReference.cache
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Menu\Menu.g.cshtml.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Carrinho\CarrinhoCompras.g.cshtml.cs
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Carrinho\View.g.cshtml.cs

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<WebApplication.Models.To.ItensCompraTo>
 @{
     ViewData["Title"] = "CarrinhoCompras";
 }
@@ -14,10 +14,68 @@
     <script src="@Url.Content("~/js/magnific-popup-options.js")"></script>
     <script src="@Url.Content("~/js/main.js")"></script>
 }
+<div class="slider-wrap">
+    <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1552604617-eea98aa27234?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80');">
 
-@model List<WebApplication.Models.In.ItemCompraIn>
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 ">
+                    <h1 data-aos="fade-up">Seu Carrinho</h1>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Acompanhe os itens adicionados antes de finalizar a compra</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END slider -->
+</div>
 
-@foreach (var element in Model)
-{
-    <p>@Html.DisplayFor(m => element)</p>
-}
+<section class="section bg-light pt-0 bottom-slant-gray">
+
+    <div class="clearfix mb-5 pb-5">
+        <div class="container-fluid">
+            <div class="row" data-aos="fade">
+                <div class="col-md-12 text-center heading-wrap">
+                    <h2>Menu</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Item)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Quantidade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Valor)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Valor)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Remover", new { id = item.CodigoItem })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
