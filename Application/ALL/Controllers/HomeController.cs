@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ALL.Models;
 using Microsoft.AspNetCore.Http;
 using WebApplication.Constants;
+using System;
 
 namespace ALL.Controllers
 {
@@ -11,7 +12,7 @@ namespace ALL.Controllers
         public IActionResult Index()
         {
             ViewBag.Usuario = HttpContext.Session.GetString(Sessions.SessionUser);
-            return View();
+            return View(HttpContext.Session);
         }
 
         public IActionResult About()
@@ -34,9 +35,9 @@ namespace ALL.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Error(Exception exception)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

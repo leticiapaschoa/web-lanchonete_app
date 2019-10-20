@@ -1,4 +1,5 @@
-﻿@{
+﻿@model WebApplication.Models.Entity.CardapioOut;
+@{
     ViewData["Title"] = "Menu";
 }
 
@@ -44,91 +45,113 @@
     </div>
 
     <div class="container">
+        @{
 
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1557106419-833730e8c3c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Vingadores</h3>
-                        <p>Escolha quatro lanches do cardápio e monte o seu combo vingadores.</p>
-                        <p class="text-primary h3">$130.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Combo Vingadores", Preco = 130.00 })</p>
+            <div class="row no-gutters">
+                @foreach (var lanche in Model.Lanches)
+                {
+                    <div class="col-md-6">
+                        <div class="sched d-block d-lg-flex">
+                            <div class="bg-image order-2" style="background-image: url(@lanche.ImagemUrl);" data-aos="fade"></div>
+                            <div class="text order-1">
+                                <h3>@lanche.Nome</h3>
+                                <p>@lanche.Descricao</p>
+                                <p class="text-primary h3">$@lanche.Preco</p>
+                                <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { IdLanche = lanche.Id })</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
 
+        }
+
+
+
+        @*<div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1557106419-833730e8c3c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Vingadores</h3>
+                            <p>Escolha quatro lanches do cardápio e monte o seu combo vingadores.</p>
+                            <p class="text-primary h3">$130.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Combo Vingadores", Preco = 130.00 })</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1560130803-aaadb4bc913e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Capitão América</h3>
+                            <p>Hamburguer, bacon, alface, tomate, queijo chedar, ovo.</p>
+                            <p class="text-primary h3">$17.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Capitão América", Preco = 17.00 })</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        @*<div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1566007696202-9e9245af4b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Viuva Negra</h3>
+                            <p>Frango grelhado, repolho roxo, cenoura, maionese da casa.</p>
+                            <p class="text-primary h3">$15.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Viuva Negra", Preco = 15 })</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1565060050382-f180053db6fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Hulk</h3>
+                            <p>Três hamburgue's, bacon, alface, tomate, maiose da casa, ovo, queijo chedar, presunto.</p>
+                            <p class="text-primary h3">26.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Hulk", Preco = 26.00 })</p>
+
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1560130803-aaadb4bc913e?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Capitão América</h3>
-                        <p>Hamburguer, bacon, alface, tomate, queijo chedar, ovo.</p>
-                        <p class="text-primary h3">$17.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Capitão América", Preco = 17.00 })</p>
 
+            <div class="row no-gutters">
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://uploads.metropoles.com/wp-content/uploads/2019/06/12120116/Godzilla-Burger-1.jpg');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Homem de Ferro</h3>
+                            <p>0.5Kg de hamburger, queijo chedar e tomate.</p>
+                            <p class="text-primary h3">47.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Homem de Ferro", Preco = 47 })</p>
+
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1566007696202-9e9245af4b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=375&q=80');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Viuva Negra</h3>
-                        <p>Frango grelhado, repolho roxo, cenoura, maionese da casa.</p>
-                        <p class="text-primary h3">$15.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Viuva Negra", Preco = 15 })</p>
+                <div class="col-md-6">
+                    <div class="sched d-block d-lg-flex">
+                        <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1550942929-6b107c0a857e?ixlib=rb-1.2.1&auto=format&fit=crop&w=625&q=80');" data-aos="fade"></div>
+                        <div class="text order-1">
+                            <h3>Thanos</h3>
+                            <p>Escolha qualquer um dos lanches do cardápio e compre somente a metade.</p>
+                            <p class="text-primary h3">18.00</p>
+                            <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Thanos", Preco = 20.00 })</p>
 
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1565060050382-f180053db6fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Hulk</h3>
-                        <p>Três hamburgue's, bacon, alface, tomate, maiose da casa, ovo, queijo chedar, presunto.</p>
-                        <p class="text-primary h3">26.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Hulk", Preco = 26.00 })</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row no-gutters">
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://uploads.metropoles.com/wp-content/uploads/2019/06/12120116/Godzilla-Burger-1.jpg');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Homem de Ferro</h3>
-                        <p>0.5Kg de hamburger, queijo chedar e tomate.</p>
-                        <p class="text-primary h3">47.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Homem de Ferro", Preco = 47 })</p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="sched d-block d-lg-flex">
-                    <div class="bg-image order-2" style="background-image: url('https://images.unsplash.com/photo-1550942929-6b107c0a857e?ixlib=rb-1.2.1&auto=format&fit=crop&w=625&q=80');" data-aos="fade"></div>
-                    <div class="text order-1">
-                        <h3>Thanos</h3>
-                        <p>Escolha qualquer um dos lanches do cardápio e compre somente a metade.</p>
-                        <p class="text-primary h3">18.00</p>
-                        <p>@Html.ActionLink("Add", "Adicionar", "Menu", new { Nome = "Thanos", Preco = 20.00 })</p>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+                </div>*@
+    </div>
 
     </div>
 </section> <!-- .section -->

@@ -22,7 +22,7 @@
 {
     <div>
         <section>
-            <div style="background-image: url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80'); background-repeat: no-repeat; background-position: center; background-size: cover">
+            <div style="background-image: url('https://www.foodiesfeed.com/wp-content/uploads/2019/02/messy-pizza-on-a-black-table.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover">
                 <div class="container">
                     <div class="row slider-text align-items-center justify-content-center">
                         <div class="col-md-8 text-center col-sm-12 ">
@@ -35,49 +35,40 @@
                                                 Usuário e/ou senha inválidos. Tente novamente.
                                             </div>
                                         }
-                                        <form method="post" class="login100-form validate-form">
-                                            <span class="login100-form-title p-b-55">
+                                    <form method="post" class="login100-form validate-form">
+
+                                        <div class="wrap-input100 validate-input m-b-16">
+                                            <input class="input100" type="text" name="Login" placeholder="Digite o login" required>
+                                            <span class="focus-input100"></span>
+                                            <span class="symbol-input100">
+                                                <span class="lnr lnr-envelope"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="wrap-input100 validate-input m-b-16">
+                                            <input class="input100" type="password" name="Senha" placeholder="Digite a senha" required>
+                                            <span class="focus-input100"></span>
+                                            <span class="symbol-input100">
+                                                <span class="lnr lnr-lock"></span>
+                                            </span>
+                                        </div>
+                                        <br /><br /><br /><br />
+                                        <div class="container-login100-form-btn p-t-25">
+                                            <button class="login100-form-btn">
                                                 Login
+                                            </button>
+                                        </div>
+                                        <br /><br /><br /><br />
+                                        <div class="text-center w-full p-t-115" style="padding-left:5%">
+                                            <span class="txt1">
+                                                Não é cadastrado?
                                             </span>
 
-                                            <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
-                                                <input class="input100" type="text" name="email" placeholder="Email">
-                                                <span class="focus-input100"></span>
-                                                <span class="symbol-input100">
-                                                    <span class="lnr lnr-envelope"></span>
-                                                </span>
-                                            </div>
-
-                                            <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                                                <input class="input100" type="password" name="pass" placeholder="Password">
-                                                <span class="focus-input100"></span>
-                                                <span class="symbol-input100">
-                                                    <span class="lnr lnr-lock"></span>
-                                                </span>
-                                            </div>
-
-                                            <div class="container-login100-form-btn p-t-25">
-                                                <button class="login100-form-btn">
-                                                    Login
-                                                </button>
-                                            </div>
-                                            <div class="google btn">
-                                                <a href="#">
-                                                    <i class="fa fa-google fa-fw">
-                                                    </i> Google
-                                                </a>
-                                            </div>
-
-                                            <div class="text-center w-full p-t-115">
-                                                <span class="txt1">
-                                                    Não é cadastrado?
-                                                </span>
-
-                                                <a class="txt1 bo1 hov1" href="#">
-                                                    Cadastre-se
-                                                </a>
-                                            </div>
-                                        </form>
+                                            <a class="txt1 bo1 hov1" asp-controller="Usuario" asp-action="Cadastrar">
+                                                Cadastre-se
+                                            </a>
+                                        </div>
+                                    </form>
                                     </div>
                                 </div>
                             </div>

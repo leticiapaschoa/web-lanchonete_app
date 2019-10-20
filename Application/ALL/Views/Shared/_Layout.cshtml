@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -35,10 +38,19 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Menu" asp-action="Menu">Menu</a>
-                        </li>
+                        </li>                       
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Carrinho" asp-action="CarrinhoCompras">Carrinho</a>
+                            @if (HttpContextAccessor.HttpContext.Session.GetString("_User") is null)
+                            {
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                            }
+                            else
+                            {
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Logout">Sair</a>
+                            }
                         </li>
+                        
+
                     </ul>
 
                 </div>
@@ -46,58 +58,58 @@
         </nav>
     </header>
 
-        @RenderBody()
-        <hr />
-        <footer class="site-footer" role="contentinfo">
+    @RenderBody()
+    <hr />
+    <footer class="site-footer" role="contentinfo">
 
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-md-4 mb-5">
-                        <h3>Sobre nós</h3>
-                        <p class="mb-5">Fundada em 2019, a Lanchoente ALL tem como objetivo se destacar no setor alimentício online.</p>
-                        <ul class="list-unstyled footer-link d-flex footer-social">
-                            <li><a href="https://pt-br.facebook.com/unimetrocampwyden/" class="p-2"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="https://www.instagram.com/unimetrocampwyden/" class="p-2"><span class="fa fa-instagram"></span></a></li>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-4 mb-5">
+                    <h3>Sobre nós</h3>
+                    <p class="mb-5">Fundada em 2019, a Lanchoente ALL tem como objetivo se destacar no setor alimentício online.</p>
+                    <ul class="list-unstyled footer-link d-flex footer-social">
+                        <li><a href="https://pt-br.facebook.com/unimetrocampwyden/" class="p-2"><span class="fa fa-facebook"></span></a></li>
+                        <li><a href="https://www.instagram.com/unimetrocampwyden/" class="p-2"><span class="fa fa-instagram"></span></a></li>
+                    </ul>
+
+                </div>
+                <div class="col-md-5 mb-5">
+                    <div class="mb-5">
+                        <h3>Horário de Funcionamento</h3>
+                        <p><strong class="d-block font-weight-normal text-black">Terça à Domingo </strong> 11am - 23pm</p>
+                    </div>
+                    <div>
+                        <h3>Informações de Contato</h3>
+                        <ul class="list-unstyled footer-link">
+                            <li class="d-block">
+                                <span class="d-block text-black">Address:</span>
+                                <span>R. Dr. Sales de Oliveira, 1661 - Vila Industrial (Campinas)</span>
+                            </li>
+                            <li class="d-block"><span class="d-block text-black">Phone:</span><span>19 99852 4332</span></li>
+                            <li class="d-block"><span class="d-block text-black">Email:</span><span>all@gmail.com.br</span></li>
                         </ul>
-
-                    </div>
-                    <div class="col-md-5 mb-5">
-                        <div class="mb-5">
-                            <h3>Horário de Funcionamento</h3>
-                            <p><strong class="d-block font-weight-normal text-black">Terça à Domingo </strong> 11am - 23pm</p>
-                        </div>
-                        <div>
-                            <h3>Informações de Contato</h3>
-                            <ul class="list-unstyled footer-link">
-                                <li class="d-block">
-                                    <span class="d-block text-black">Address:</span>
-                                    <span>R. Dr. Sales de Oliveira, 1661 - Vila Industrial (Campinas)</span>
-                                </li>
-                                <li class="d-block"><span class="d-block text-black">Phone:</span><span>19 99852 4332</span></li>
-                                <li class="d-block"><span class="d-block text-black">Email:</span><span>all@gmail.com.br</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">
-                        
-                    </div>
-                    <div class="col-md-3">
-
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 text-md-center text-left">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <div class="col-md-3 mb-5">
 
-                        </p>
-                    </div>
+                </div>
+                <div class="col-md-3">
+
                 </div>
             </div>
-        </footer>
+            <div class="row">
+                <div class="col-12 text-md-center text-left">
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#cf1d16" /></svg></div>
 
     @RenderSection("Scripts", required: true)
