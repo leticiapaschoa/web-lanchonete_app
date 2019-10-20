@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication.Models.In;
 using System;
 using System.Net.Http;
 using WebApplication.Constants;
@@ -20,17 +19,8 @@ namespace WebApplication.Controllers
         }
        
 
-        public IActionResult Adicionar(CarrinhoCompraIn carrinhoCompraIn)
+        public IActionResult Adicionar()
         {
-            if(HttpContext.Session is null)
-            {
-                ViewBag.Javascript = "<script language='javascript' type='text/javascript'>alert('Data Already Exists');</script>";
-
-                return RedirectToAction("Menu");
-            }
-
-            new CarrinhoController().AdicionarCarrinho(carrinhoCompraIn);
-
             return RedirectToAction("Menu", "Menu");
         }
 

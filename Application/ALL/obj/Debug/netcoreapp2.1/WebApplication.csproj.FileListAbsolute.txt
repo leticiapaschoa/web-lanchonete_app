@@ -24,7 +24,6 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Vi
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\Cadastrar.cshtml.g.cs
-D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Usuario\TESTECadastrar.cshtml.g.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.RazorTargetAssemblyInfo.cache
@@ -33,4 +32,3 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebAppli
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.dll
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.pdb
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.csproj.CopyComplete
-D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.csprojAssemblyReference.cache
