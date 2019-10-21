@@ -163,7 +163,7 @@ WriteAttributeValue("", 638, Url.Content("~/js/main.js"), 638, 28, false);
                 WriteLiteral("></script>\r\n    ");
                 EndContext();
                 BeginContext(683, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cc8f0fabec124919b6c738a3b7017958", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b511b3e60dbb48c39bc107b584ef8772", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -222,7 +222,7 @@ WriteAttributeValue("", 638, Url.Content("~/js/main.js"), 638, 28, false);
             WriteLiteral("                                    ");
             EndContext();
             BeginContext(1879, 2278, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8129bbff086740e3a42c99fd6dee822d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a590911cd9e049de99e1a5765aaccae1", async() => {
                 BeginContext(1935, 1945, true);
                 WriteLiteral(@"
 
@@ -257,7 +257,7 @@ WriteAttributeValue("", 638, Url.Content("~/js/main.js"), 638, 28, false);
                                             ");
                 EndContext();
                 BeginContext(3880, 184, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abda3aef17114cef9793fa80e230ff42", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "833b5a2de56247d2a181991257f127a6", async() => {
                     BeginContext(3953, 107, true);
                     WriteLiteral("\r\n                                                Cadastre-se\r\n                                            ");
                     EndContext();

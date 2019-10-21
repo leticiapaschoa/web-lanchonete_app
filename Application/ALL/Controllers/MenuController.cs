@@ -24,7 +24,7 @@ namespace WebApplication.Controllers
             return RedirectToAction("Menu", "Menu");
         }
 
-        private CardapioOut ConsultarCardapio()
+        public CardapioOut ConsultarCardapio()
         {
             var cardapio = new CardapioOut();
 

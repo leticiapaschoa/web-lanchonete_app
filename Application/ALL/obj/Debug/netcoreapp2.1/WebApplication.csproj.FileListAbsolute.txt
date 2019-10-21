@@ -32,3 +32,7 @@ D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebAppli
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.dll
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.pdb
 D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.csproj.CopyComplete
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Adm\Index.cshtml.g.cs
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\WebApplication.csprojAssemblyReference.cache
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Adm\Cadastrar.cshtml.g.cs
+D:\Metrocamp\web-lanchonete_app\Application\ALL\obj\Debug\netcoreapp2.1\Razor\Views\Adm\Editar.cshtml.g.cs

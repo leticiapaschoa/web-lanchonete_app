@@ -38,7 +38,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Menu" asp-action="Menu">Menu</a>
-                        </li>                       
+                        </li>
                         <li class="nav-item">
                             @if (HttpContextAccessor.HttpContext.Session.GetString("_User") is null)
                             {
@@ -49,7 +49,13 @@
                                 <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Logout">Sair</a>
                             }
                         </li>
-                        
+                        <li class="nav-item">
+                            @*@if (HttpContextAccessor.HttpContext.Session.GetString("_User") == "adm-all")
+                            {*@
+                                <a class="nav-link" asp-area="" asp-controller="Adm" asp-action="Index">Administrador</a>
+                            @*}*@                           
+                        </li>
+
 
                     </ul>
 

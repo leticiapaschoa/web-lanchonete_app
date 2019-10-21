@@ -4,7 +4,6 @@ using WebApplication.Models.Out;
 namespace WebApplication.Models.Entity
 {
     public class CardapioOut : BaseOut
-
     {
         public CardapioOut()
         {

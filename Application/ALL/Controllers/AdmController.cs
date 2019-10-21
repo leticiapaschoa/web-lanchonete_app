@@ -1,40 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using WebApplication.Constants;
+using WebApplication.Models.Entity;
+using WebApplication.Models.In;
+using WebApplication.Models.Out;
 
 namespace WebApplication.Controllers
 {
     public class AdmController : Controller
     {
-        // GET: Adm
         public ActionResult Index()
         {
-            return View();
+            var consultaOut = new MenuController().ConsultarCardapio();
+
+            return View(consultaOut.Lanches);
         }
 
-        // GET: Adm/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Cadastrar()
         {
             return View();
         }
 
-        // GET: Adm/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Adm/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Cadastrar(Lanche lanche)
         {
             try
             {
-                // TODO: Add insert logic here
+                var cadastrarOut = CadastrarLanche(lanche);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -44,20 +43,22 @@ namespace WebApplication.Controllers
             }
         }
 
-        // GET: Adm/Edit/5
-        public ActionResult Edit(int id)
+        
+        public ActionResult Editar(string id)
         {
-            return View();
+            var lanche = new MenuController().ConsultarCardapio()
+                                        .Lanches
+                                        .FirstOrDefault(l => l.Id.Equals(id));
+
+            return View(lanche);
         }
 
-        // POST: Adm/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Editar(string id, Lanche lanche)
         {
             try
             {
-                // TODO: Add update logic here
+                var admOut = EditarLanche(id, lanche);
 
                 return RedirectToAction(nameof(Index));
             }
@@ -67,26 +68,86 @@ namespace WebApplication.Controllers
             }
         }
 
-        // GET: Adm/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Adm/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Deletar(string id)
         {
             try
             {
-                // TODO: Add delete logic here
+                DeletarLanche(id);
 
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
+            }
+        }
+
+        private AdmOut CadastrarLanche(Lanche lanche)
+        {
+            var admInserirOut = new AdmOut();
+            try
+            {
+                var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<Lanche, AdmLancheIn>();
+                });
+
+                IMapper iMapper = config.CreateMapper();
+
+                var admLancheIn = iMapper.Map<Lanche, AdmLancheIn>(lanche);
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(Services.UrlBase);
+                    var response = client.PostAsJsonAsync(Services.UrlCadastrarLanche, admLancheIn).Result;
+
+                    admInserirOut.Sucesso = response.IsSuccessStatusCode;
+                    admInserirOut.Mensagem = response.Content.ReadAsStringAsync().Result;
+                }
+
+                return admInserirOut;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private AdmOut EditarLanche(string id, Lanche lanche)
+        {
+            var admInserirOut = new AdmOut();
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(Services.UrlBase);
+                    var response = client.PutAsJsonAsync(string.Format(Services.UrlEditarLanche, id), lanche).Result;
+
+                    admInserirOut.Sucesso = response.IsSuccessStatusCode;
+                    admInserirOut.Mensagem = response.Content.ReadAsStringAsync().Result;
+                }
+
+                return admInserirOut;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void DeletarLanche(string id)
+        {          
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri(Services.UrlBase);
+                    var response = client.GetAsync(string.Format(Services.UrlDeletarLanche, id)).Result;
+                    
+                }               
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
         }
     }
