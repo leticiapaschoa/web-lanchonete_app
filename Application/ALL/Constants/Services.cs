@@ -2,7 +2,7 @@
 {
     public static class Services
     {
-        public const string UrlBase = "https://api-all.azurewebsites.net";
+        public const string UrlBase = "https://api-all2.azurewebsites.net";
 
         #region Login
         public const string UrlAutenticacao = "/api/Login";
