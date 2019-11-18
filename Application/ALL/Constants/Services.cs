@@ -18,5 +18,9 @@
         #region User
         public const string UrlAdicionarUsuario = "/api/User";
         #endregion
+
+        #region ConsultarDadosProjetos
+        public const string UrlProjetoChat = "https://api-chat-firebase.herokuapp.com/";
+        #endregion
     }
 }
