@@ -1,0 +1,74 @@
+﻿@model IEnumerable<WebApplication.Models.Entity.CarroUsuario>
+
+@{
+    ViewData["Title"] = "Usuário Carro";
+}
+
+@section Scripts
+{
+    <script src="@Url.Content("~/js/jquery-3.2.1.min.js")"></script>
+    <script src="@Url.Content("~/js/popper.min.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/js/jquery.waypoints.min.js")"></script>
+    <script src="@Url.Content("~/js/aos.js")"></script>
+    <script src="@Url.Content("~/js/jquery.magnific-popup.min.js")"></script>
+    <script src="@Url.Content("~/js/magnific-popup-options.js")"></script>
+    <script src="@Url.Content("~/js/main.js")"></script>
+    <link rel="stylesheet" href="~/css/menu.css" />
+}
+
+<div class="slider-wrap">
+    <div class="slider-item" style="background-image: url('https://images.unsplash.com/photo-1552604617-eea98aa27234?ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80');">
+
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 ">
+                    <h1 data-aos="fade-up">Usuários Carro</h1>
+                    <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Integração com o Projeto 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END slider -->
+</div>
+<section class="section bg-light pt-0 bottom-slant-gray">
+
+    <div class="clearfix mb-5 pb-5">
+        <div class="container-fluid">
+            <div class="row" data-aos="fade">
+                <div class="col-md-12 text-center heading-wrap">
+                    <h2>Usuários Carro</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Usuário
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
