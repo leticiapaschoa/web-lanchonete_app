@@ -18,8 +18,7 @@ namespace WebApplication.Controllers
         public List<String[]> BuscarUsuarios()
         {
             SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = "server=thanos-web.database.windows.net;user id=andrelivee;password=andrelivee;Trusted_Connection=true;Database=Carros;Connection timeout=6000";
-
+            Conexao.ConnectionString = "Server=thanos-web.database.windows.net;user id=andrelivee;pwd=@andre123;Database=Carros";
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
