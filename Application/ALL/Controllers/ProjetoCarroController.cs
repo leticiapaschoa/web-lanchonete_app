@@ -25,14 +25,14 @@ namespace WebApplication.Controllers
             SqlCommand Comando = new SqlCommand();
             Comando.Connection = Conexao;
 
-            Comando.CommandText = "SELECT * FROM cliente";
+            Comando.CommandText = "SELECT nome, email FROM cliente";
 
             SqlDataReader Leitor = Comando.ExecuteReader();
 
             List<String[]> clientes = new List<String[]>();
             while (Leitor.Read())
             {
-                String[] cliente = new String[6];
+                String[] cliente = new String[1000];
                 cliente[0] = Leitor["nome"].ToString();
                 cliente[1] = Leitor["email"].ToString();
                 
@@ -43,22 +43,6 @@ namespace WebApplication.Controllers
             Conexao.Close();
 
             return clientes;
-
-
-
-
-            //string connString = "server=thanos-web.database.windows.net;user id=andrelivee;password=andrelivee;Trusted_Connection=true;Database=Carros;Connection timeout=6000";
-
-
-            //var connection = new SqlConnection(connString);
-            //connection.Open();
-            //var command = new SqlCommand("SELECT nome, email FROM dbo.cliente", connection);
-
-            //connection.Close();
-
-            //return command.ExecuteReader().Read();
-
-
         }
     }
 }
