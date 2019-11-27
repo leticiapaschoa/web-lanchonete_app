@@ -18,7 +18,35 @@ namespace WebApplication.Controllers
             return View(dados);
         }
 
-        public List<Mensagem> ConsultarDadosProjeto1()
+        public IActionResult Inserir()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Inserir(Mensagem mensagem)
+        {
+            try
+            {
+                CadastrarMensagem(mensagem);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        private void CadastrarMensagem(Mensagem mensagem)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.PutAsJsonAsync(Services.UrlProjetoChat, mensagem).Result;
+            }
+        }
+
+        private List<Mensagem> ConsultarDadosProjeto1()
         {
             try
             {
@@ -29,16 +57,14 @@ namespace WebApplication.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         var mensagens = new List<Mensagem>();
-                        var objJson = (JObject)JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
-
-                        objJson.Last.Remove();
-                                                
+                        var objJson = (JObject)JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result.ToUpper());
+                                                                        
                         foreach (var item in objJson)
                         {
                             var mensagem = new Mensagem
                             {
-                                user = item.Value["user"].ToString(),
-                                txt = item.Value["txt"].ToString()
+                                user = item.Value["USER"].ToString(),
+                                txt = item.Value["TXT"].ToString()
                             };
 
                             mensagens.Add(mensagem);
