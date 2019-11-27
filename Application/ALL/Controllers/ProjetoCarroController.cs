@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models.Entity;
@@ -15,10 +14,56 @@ namespace WebApplication.Controllers
             return View(cliente);
         }
 
-        public List<String[]> BuscarUsuarios()
+        public IActionResult Inserir()
+        {   
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Inserir(CarroUsuario usuario)
         {
-            SqlConnection Conexao = new SqlConnection();
-            Conexao.ConnectionString = "Server=thanos-web.database.windows.net;user id=andrelivee;pwd=@andre123;Database=Carros";
+            try
+            {
+                CadastrarUsuario(usuario);
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        private void CadastrarUsuario(CarroUsuario usuario)
+        {
+            var Conexao = new SqlConnection
+            {
+                ConnectionString = "Server=thanos-web.database.windows.net;user id=andrelivee;pwd=@andre123;Database=Carros"
+            };
+
+            Conexao.Open();
+
+            using (SqlCommand command = Conexao.CreateCommand())
+            {
+                command.CommandText = "INSERT INTO cliente (nome, email) VALUES(@param1,@param2)";
+
+                command.Parameters.AddWithValue("@param1", usuario.nome);
+                command.Parameters.AddWithValue("@param2", usuario.email);
+
+                command.ExecuteNonQuery();
+            }
+
+            Conexao.Close();
+
+        }
+
+        private List<String[]> BuscarUsuarios()
+        {
+            var Conexao = new SqlConnection
+            {
+                ConnectionString = "Server=thanos-web.database.windows.net;user id=andrelivee;pwd=@andre123;Database=Carros"
+            };
+            
             Conexao.Open();
 
             SqlCommand Comando = new SqlCommand();
